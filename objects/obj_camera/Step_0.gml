@@ -14,7 +14,7 @@ if (instance_exists(obj_batery)) {
     if (penalidade == 4 || penalidade == 3) pcr_max = 100;
     if (penalidade == 2) pcr_max = 75;
     if (penalidade == 1) pcr_max = 50;
-	if (penalidade == 5) pcr_max = 10;
+    if (penalidade == 5) pcr_max = 10;
 }
 
 
@@ -25,8 +25,6 @@ if (instance_exists(obj_Sonar_player)) {
     } else {
         // instance_destroy(obj_Sonar_player);
     }
-    
-
 }
 
 // 3. O SONAR ESTÁ DESLIGADO (Recarregando o PCR)
@@ -56,7 +54,6 @@ else {
     else if (pcr >= 77) {
         cor_sonar_raio_hud = c_yellow;
     }
-	
     else {
         cor_sonar_raio_hud = c_red;
     }
@@ -92,7 +89,17 @@ for (var i = ds_list_size(lista_fade) - 1; i >= 0; i--)
         continue;
     }
     
-    _inst.image_alpha -= 0.01;
+
+    // A velocidade de base para paredes
+    var _vel_fade = 0.01; 
+    
+    // Se for o obj_ponto, fica 1,75 vezes mais lento
+    if (_inst.object_index == obj_ponto) {
+        _vel_fade = 0.01 / 10; 
+    }
+    
+    _inst.image_alpha -= _vel_fade;
+    // ----------------------------
     
     if (_inst.image_alpha <= 0)
     {
