@@ -67,7 +67,6 @@
     {"id":{"name":"obj_HUD_inferior","path":"objects/obj_HUD_inferior/obj_HUD_inferior.yy",},},
     {"id":{"name":"obj_intro_crt","path":"objects/obj_intro_crt/obj_intro_crt.yy",},},
     {"id":{"name":"Obj_intro_da_intro","path":"objects/Obj_intro_da_intro/Obj_intro_da_intro.yy",},},
-    {"id":{"name":"obj_junglebox","path":"objects/obj_junglebox/obj_junglebox.yy",},},
     {"id":{"name":"obj_liberar_rfid","path":"objects/obj_liberar_rfid/obj_liberar_rfid.yy",},},
     {"id":{"name":"obj_minigame","path":"objects/obj_minigame/obj_minigame.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

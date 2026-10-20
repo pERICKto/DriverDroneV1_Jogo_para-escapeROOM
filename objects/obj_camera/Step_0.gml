@@ -93,9 +93,9 @@ for (var i = ds_list_size(lista_fade) - 1; i >= 0; i--)
     // A velocidade de base para paredes
     var _vel_fade = 0.01; 
     
-    // Se for o obj_ponto, fica 1,75 vezes mais lento
+    // aumenta especificamente o tempo de fade out do ponto de interesse
     if (_inst.object_index == obj_ponto) {
-        _vel_fade = 0.01 / 10; 
+        _vel_fade = 0.01 / 12; 
     }
     
     _inst.image_alpha -= _vel_fade;
