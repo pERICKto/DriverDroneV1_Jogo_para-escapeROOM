@@ -20,4 +20,5 @@ if (esperando_audio && !audio_is_playing(distorted_welcome_jingle))
 {
     esperando_audio = false;
     room_goto(rm_2_bunker);
+	audio_play_sound(sfx_spawBUNKER_ou_desceramostra,5,false);
 }

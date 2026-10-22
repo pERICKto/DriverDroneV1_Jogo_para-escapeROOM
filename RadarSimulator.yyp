@@ -301,6 +301,7 @@
     {"id":{"name":"sfx_Alarm5","path":"sounds/sfx_Alarm5/sfx_Alarm5.yy",},},
     {"id":{"name":"sfx_amostra_bunker","path":"sounds/sfx_amostra_bunker/sfx_amostra_bunker.yy",},},
     {"id":{"name":"sfx_amostra_bunker2","path":"sounds/sfx_amostra_bunker2/sfx_amostra_bunker2.yy",},},
+    {"id":{"name":"sfx_barulho_terra_do_youtube","path":"sounds/sfx_barulho_terra_do_youtube/sfx_barulho_terra_do_youtube.yy",},},
     {"id":{"name":"sfx_batery_alert","path":"sounds/sfx_batery_alert/sfx_batery_alert.yy",},},
     {"id":{"name":"sfx_hud1","path":"sounds/sfx_hud1/sfx_hud1.yy",},},
     {"id":{"name":"sfx_iniciando_jogo","path":"sounds/sfx_iniciando_jogo/sfx_iniciando_jogo.yy",},},

@@ -8,6 +8,7 @@ pcr = clamp(pcr,0,100);
 consumo_bateria = pcr * 1.5
 global.bateria_atual = 4000;
 global.player_is_moving = false;
+global.trocou_de_sala = false;
 distancia_moving = 0;
 
 lista_fade = ds_list_create();

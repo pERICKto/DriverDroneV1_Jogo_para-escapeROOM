@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"strong_wind__long.mp3",
-  "volume":1.0,
+  "volume":0.15,
 }

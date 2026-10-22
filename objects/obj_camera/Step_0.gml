@@ -63,14 +63,37 @@ var hud_altura = 128;//tamanho hud
 switch (room) {
     case rm_intro:
     case rm_1_terra:
+		if (audio_is_playing(large_generator_humming_and_creaking)){
+				audio_stop_sound(large_generator_humming_and_creaking);
+			}
     case rm_2_bunker:
+	
+			if (audio_is_playing(strong_wind__long)){
+				audio_stop_sound(strong_wind__long);
+			}
+
+					if !(audio_is_playing(large_generator_humming_and_creaking)){
+				audio_play_sound(large_generator_humming_and_creaking,1,false);
+			}
+	
     case rm_3_air:
+		if (audio_is_playing(large_generator_humming_and_creaking)){
+				audio_stop_sound(large_generator_humming_and_creaking);
+			}
+	
         var _view_x = clamp(x - width_ / 2, 0, room_width - width_);
         var _view_y = clamp(y - height_ / 2.63, 0, room_height - height_ + hud_altura);
         camera_set_view_pos(view_camera[0], _view_x, _view_y);
         break; 
         
     case rm_4_agua:
+	if (audio_is_playing(large_generator_humming_and_creaking)){
+				audio_stop_sound(large_generator_humming_and_creaking);
+			}
+	
+	if !(audio_is_playing(strong_wind__long)){
+		audio_play_sound(strong_wind__long,1,false);
+}
     case rm_victory:
         var _view_x = clamp(x - width_ / 2, 0, room_width - width_);
         var _view_y = clamp(y - height_ / 2, 0, room_height - height_ + hud_altura);

@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"large_generator_humming_and_creaking.mp3",
-  "volume":1.0,
+  "volume":0.15,
 }

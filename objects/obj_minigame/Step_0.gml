@@ -14,6 +14,9 @@ if (intro) {
 }
 else {
     if (!espera) {
+		if !(audio_is_playing(distorted_audio_transmission)){
+			audio_play_sound(distorted_audio_transmission,2,false);
+		}
         
         // 1. AMPLITUDE (Potenciômetro no Eixo X OU Setas Cima/Baixo)
         // Se o painel estiver conectado, a posição do knob dita a amplitude absoluta.
@@ -32,24 +35,13 @@ else {
         if (freq_mais)  player_frequencia += 0.0004;
         if (freq_menos) player_frequencia -= 0.0004;
 
-//(Encoder 8 e 7 OU Teclas W e S)
+//(Encoder rotativo (potenciometro digital) 8 e 7 OU Teclas W e S)
         var vel_mais  = keyboard_check(ord("W")) || (pad != -1 && gamepad_button_check(pad, 8));
         var vel_menos = keyboard_check(ord("S")) || (pad != -1 && gamepad_button_check(pad, 7));
         
         if (vel_mais)  player_velocidade += 0.5;
         if (vel_menos) player_velocidade -= 0.5;
 
-        // 3. VELOCIDADE/FASE (Encoder 8 e 7 OU Teclas W e S)
-        var vel_mais  = keyboard_check(ord("W")) || (pad != -1 && gamepad_button_check(pad, 8));
-        var vel_menos = keyboard_check(ord("S")) || (pad != -1 && gamepad_button_check(pad, 7));
-        
-        if (vel_mais)  player_velocidade += 0.5;
-        if (vel_menos) player_velocidade -= 0.5;
-
-
-        // -------------------------------------------------------------
-        // CÁLCULOS DA ONDA (Mantidos exatamente iguais)
-        // -------------------------------------------------------------
         player_fase += player_velocidade * 0.05;  
         alvo_fase += alvo_velocidade * 0.05;
 
@@ -91,6 +83,10 @@ else {
         { 
 			global.skip = true;
             room_goto(destino);
+			if !(audio_is_playing(distorted_audio_transmission)){
+			audio_stop_sound(distorted_audio_transmission);
+		}
+			
         }
         
         // RECUSAR (Descartar a amostra - Qualquer Direcional)
@@ -111,8 +107,10 @@ else {
 			{
                 global.water = "";
             }
-            
             room_goto(destino);
+					if !(audio_is_playing(distorted_audio_transmission)){
+			audio_stop_sound(distorted_audio_transmission);
+		}
         }
     }
 }
