@@ -5,7 +5,7 @@ if (global.valid_terra == "usado")
 }
 else
 {
-    targetROOM_x = 1980; 
-    targetROOM_y = 900;
+    targetROOM_x = 930; 
+    targetROOM_y = 755;
     target_ROOM = rm_1_terra; // selecao de sala
 }
