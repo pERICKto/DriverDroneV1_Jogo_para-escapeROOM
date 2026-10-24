@@ -65,7 +65,7 @@ else {
         if (diff_fase > pi) diff_fase = (2 * pi) - diff_fase;
 
         // VALIDAÇÃO DE SINTONIA
-        if (diff_amp <= tolerancia && diff_freq <= 0.007 && diff_fase <= 0.5 && diff_vel <= 0.4) {
+        if (diff_amp <= tolerancia && diff_freq <= 0.009 && diff_fase <= 0.7 && diff_vel <= 0.6) {
             if (global.binary == 1) {
                 espera = true;
                 destino = rm_1_terra;
