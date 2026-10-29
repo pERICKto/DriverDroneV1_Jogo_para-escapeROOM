@@ -1,0 +1,1 @@
+esta é uma branch dedicada a uma versão mais fácil do jogo onde sera utilidada em alguns dos cenários, sendo eles uma sessão com o *tempo reduzido*, uma sessão em que as pessoas optarem por uma experiencia mais *casual* ou ate mesmo uma *primeira jogada*
