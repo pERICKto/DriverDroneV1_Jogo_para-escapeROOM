@@ -1,0 +1,1 @@
+global.trocou_de_sala = false;

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_barulho_terra_do_youtube",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":48.181404,
+  "exportDir":"",
+  "name":"sfx_barulho_terra_do_youtube",
+  "parent":{
+    "name":"gerais",
+    "path":"folders/ouvidinho_do_DJ/gerais.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_barulho_terra_do_youtube.mp3",
+  "volume":0.08,
+}

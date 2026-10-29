@@ -11,7 +11,7 @@
   "option_windows_description_info":"A GameMaker Game",
   "option_windows_disable_sandbox":true,
   "option_windows_display_cursor":false,
-  "option_windows_display_name":"v1",
+  "option_windows_display_name":"driver drone.v1",
   "option_windows_enable_steam":false,
   "option_windows_executable_name":"software_wall3.exe",
   "option_windows_icon":"${options_dir}/windows/icons/icon.ico",

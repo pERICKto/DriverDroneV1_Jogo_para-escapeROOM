@@ -70,7 +70,7 @@ else
             {
                 _string = "01001111 : [c_green]00110100 00111000 %[/c]\n01000011 : [c_green]00110001 00110010 %[/c]\n01000011 01000001 : [c_green]00110100 00110000 %[/c]\n\nAnalise finalizada... [delay]\n\n[c_yellow][blink]sonar = coletar \n\noutro = largar";
             }
-            else if (global.terrs == 6)
+            else if (global.terra == 6)
             {
                 _string = "[c_green]smelly organic material... \nbetter leave it alone";
             }

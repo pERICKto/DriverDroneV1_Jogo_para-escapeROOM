@@ -1,5 +1,5 @@
 draw_set_colour(cor_sonar_raio_hud);
-draw_text(600,32,"distancia total"+ string(global.distancia_percorrida/3));
+draw_text(600,32,"distancia total"+ string(global.distancia_percorrida/5));
 draw_text(32,450,"precision radius"+ string(pcr));
 
 #region	//sistema do mini monitor hud

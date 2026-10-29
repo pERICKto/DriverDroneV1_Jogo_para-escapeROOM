@@ -8,7 +8,7 @@ scan_x = 0;
 scan_y = 0;
 
 // Configurações do efeito
-scan_speed = 200;       // Velocidade da varredura (pixels por frame)
+scan_speed = 4500;       // Velocidade da varredura (pixels por frame)
 line_height = 8;       // Grossura de cada linha da TV
 
 // Controle da Surface e Animação

@@ -14,7 +14,7 @@ if (instance_exists(obj_batery)) {
     if (penalidade == 4 || penalidade == 3) pcr_max = 100;
     if (penalidade == 2) pcr_max = 75;
     if (penalidade == 1) pcr_max = 50;
-	if (penalidade == 5) pcr_max = 10;
+    if (penalidade == 5) pcr_max = 10;
 }
 
 
@@ -25,8 +25,6 @@ if (instance_exists(obj_Sonar_player)) {
     } else {
         // instance_destroy(obj_Sonar_player);
     }
-    
-
 }
 
 // 3. O SONAR ESTÁ DESLIGADO (Recarregando o PCR)
@@ -56,7 +54,6 @@ else {
     else if (pcr >= 77) {
         cor_sonar_raio_hud = c_yellow;
     }
-	
     else {
         cor_sonar_raio_hud = c_red;
     }
@@ -66,14 +63,37 @@ var hud_altura = 128;//tamanho hud
 switch (room) {
     case rm_intro:
     case rm_1_terra:
+		if (audio_is_playing(large_generator_humming_and_creaking)){
+				audio_stop_sound(large_generator_humming_and_creaking);
+			}
     case rm_2_bunker:
+	
+			if (audio_is_playing(strong_wind__long)){
+				audio_stop_sound(strong_wind__long);
+			}
+
+					if !(audio_is_playing(large_generator_humming_and_creaking)){
+				audio_play_sound(large_generator_humming_and_creaking,1,false);
+			}
+	
     case rm_3_air:
+		if (audio_is_playing(large_generator_humming_and_creaking)){
+				audio_stop_sound(large_generator_humming_and_creaking);
+			}
+	
         var _view_x = clamp(x - width_ / 2, 0, room_width - width_);
         var _view_y = clamp(y - height_ / 2.63, 0, room_height - height_ + hud_altura);
         camera_set_view_pos(view_camera[0], _view_x, _view_y);
         break; 
         
     case rm_4_agua:
+	if (audio_is_playing(large_generator_humming_and_creaking)){
+				audio_stop_sound(large_generator_humming_and_creaking);
+			}
+	
+	if !(audio_is_playing(strong_wind__long)){
+		audio_play_sound(strong_wind__long,1,false);
+}
     case rm_victory:
         var _view_x = clamp(x - width_ / 2, 0, room_width - width_);
         var _view_y = clamp(y - height_ / 2, 0, room_height - height_ + hud_altura);
@@ -92,7 +112,17 @@ for (var i = ds_list_size(lista_fade) - 1; i >= 0; i--)
         continue;
     }
     
-    _inst.image_alpha -= 0.01;
+
+    // A velocidade de base para paredes
+    var _vel_fade = 0.01; 
+    
+    // aumenta especificamente o tempo de fade out do ponto de interesse
+    if (_inst.object_index == obj_ponto) {
+        _vel_fade = 0.01 / 12; 
+    }
+    
+    _inst.image_alpha -= _vel_fade;
+    // ----------------------------
     
     if (_inst.image_alpha <= 0)
     {

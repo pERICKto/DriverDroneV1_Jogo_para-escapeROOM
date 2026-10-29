@@ -64,6 +64,17 @@ if (xspd != 0 || yspd != 0) {
     audio_stop_sound(sfx_39__Propeller_Noise);
 }
 
+if (xspd != 0 &&room == rm_1_terra || yspd != 0 &&room == rm_1_terra) {
+    global.player_is_moving = true;
+    
+    if (!audio_is_playing(sfx_barulho_terra_do_youtube)) {
+        audio_play_sound(sfx_barulho_terra_do_youtube, 2, false);
+    }
+} else {
+    global.player_is_moving = false;
+    audio_stop_sound(sfx_barulho_terra_do_youtube);
+}
+
         // Ativação do Sonar
         if (sonar_key)
         {

@@ -39,7 +39,3 @@ typist_final_w.in(0.5, 0);
 typist_binario = scribble_typist();
 texto_binario = undefined;
 binario_cache = "";
-
-
-
-
