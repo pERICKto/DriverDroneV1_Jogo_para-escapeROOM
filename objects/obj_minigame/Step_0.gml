@@ -83,14 +83,10 @@ else {
         if (diff_fase > pi) diff_fase = (2 * pi) - diff_fase;
 
         // VALIDAÇÃO DE SINTONIA
-<<<<<<< HEAD
+
         if (diff_amp <= tolerancia && diff_freq <= 0.009 && diff_fase <= 0.7 && diff_vel <= 0.6) {
-=======
-        if (diff_amp <= tolerancia && diff_freq <= 0.007 && diff_fase <= 0.5 && diff_vel <= 0.4) {
             // Para o som de zumbido/hum ao concluir a sintonia
             audio_stop_sound(electrical_light_crackle_hum);
-
->>>>>>> origin/modo_padrao
             if (global.binary == 1) {
                 espera = true;
                 destino = rm_1_terra;
