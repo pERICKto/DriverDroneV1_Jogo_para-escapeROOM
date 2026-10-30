@@ -87,3 +87,6 @@ else
     visible = true;
     bunker = false;
 }
+if(room !=rm_2_bunker){
+instance_create_layer(x, y, "Instances", obj_sonar_smini);
+}
