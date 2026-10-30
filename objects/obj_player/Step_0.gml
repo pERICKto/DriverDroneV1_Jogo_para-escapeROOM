@@ -87,6 +87,18 @@ else
     visible = true;
     bunker = false;
 }
-if(room !=rm_2_bunker){
+if(room !=rm_2_bunker && criou_sonar_respirante=false){
 instance_create_layer(x, y, "Instances", obj_sonar_smini);
+criou_sonar_respirante=true
+}
+
+
+if(room = rm_2_bunker){
+instance_destroy(obj_sonar_smini)
+ criou_sonar_respirante = false;
+}
+
+if (instance_exists(obj_sonar_smini)) {
+    obj_sonar_smini.x = x;
+    obj_sonar_smini.y = y;
 }

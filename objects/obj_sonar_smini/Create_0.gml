@@ -1,10 +1,13 @@
+//este objeto é invocado pelo create da bateria
+
 lista_paredes = ds_list_create();
 lista_pontos  = ds_list_create();
 lista_fade    = ds_list_create();
+
 cor_sonar = c_blue;
 convert_radius = obj_batery.batery_estado; 
-radius = 10;
-max_radius = convert_radius * 5;      
+radius = 1;
+max_radius = convert_radius * 50;      
 wave_width = 8;         
 alpha = 0.2;
 

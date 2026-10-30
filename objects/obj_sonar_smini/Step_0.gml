@@ -1,4 +1,10 @@
-radius += 1;
+//seguir o jogador
+// Verifica se a instância salva ainda existe para evitar erros
+
+
+
+
+radius = 50;
 
 // PAREDES
 for (var i = 0; i < n_paredes; i++) {
