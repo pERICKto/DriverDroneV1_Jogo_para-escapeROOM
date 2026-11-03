@@ -2,7 +2,7 @@ draw_set_colour(cor_sonar_raio_hud);
 draw_text(600,32,"distancia total"+ string(global.distancia_percorrida/5));
 draw_text(32,450,"precision radius"+ string(pcr));
 
-#region	//sistema do mini monitor hud
+#region	//sistema do mini monitor hud<<<<<<
 // 1. Posição em pixels do visor escura do MONITOR no seu sprite da HUD (ajuste estes valores)
 var _mon_x1 = 290; // Borda esquerda da tela do monitor
 var _mon_y1 = 510; // Borda superior da tela do monitor

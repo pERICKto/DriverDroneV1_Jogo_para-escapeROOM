@@ -1,3 +1,5 @@
+//este objeto é o sonar passivo de proximidade do jogador
+
 lista_paredes = ds_list_create();
 lista_pontos  = ds_list_create();
 lista_fade    = ds_list_create();
