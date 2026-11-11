@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_varreduraImpressora",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_varreduraImpressora",
+  "parent":{
+    "name":"RadarSimulator",
+    "path":"RadarSimulator.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
