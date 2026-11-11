@@ -12,7 +12,6 @@ global.trocou_de_sala = false;
 
 // flags para toda vez que jogador entra em uma sala nova (para impressora termica!)
 global.visitou_terra  = false;
-global.visitou_bunker = false;
 global.visitou_air    = false;
 global.visitou_agua   = false;
 distancia_moving = 0;

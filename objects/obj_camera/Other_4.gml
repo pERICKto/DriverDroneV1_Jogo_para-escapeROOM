@@ -48,3 +48,20 @@ switch (room) {
         }
         break;
 }
+	
+	//impressora termica PARTE DOIS O RETORNO DOS INIMIGOS AGORA É OUTRO EXPLOSOES FODAS!
+if (room == rm_1_terra && !global.visitou_terra) {
+    global.visitou_terra = true;
+    scr_gerar_relatorio_radar();
+    instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_Sonar_player);
+}
+else if (room == rm_3_air && !global.visitou_air) {
+    global.visitou_air = true;
+    scr_gerar_relatorio_radar();
+    instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_Sonar_player);
+}
+else if (room == rm_4_agua && !global.visitou_agua) {
+    global.visitou_agua = true;
+    scr_gerar_relatorio_radar();
+    instance_create_layer(obj_player.x, obj_player.y, "Instances", obj_Sonar_player);
+}

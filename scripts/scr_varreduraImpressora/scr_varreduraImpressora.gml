@@ -1,3 +1,4 @@
+
 function scr_gerar_relatorio_radar() {
     var _pasta = environment_get_variable("USERPROFILE") + "\\Downloads\\";
     var _caminho = _pasta + "pontos_interesse.txt";
@@ -57,3 +58,5 @@ function scr_gerar_relatorio_radar() {
     
     file_text_close(_arquivo);
 }
+	
+	//o resto do codigo esta rodando dentro do room start do objeto camera
