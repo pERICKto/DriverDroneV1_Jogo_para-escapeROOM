@@ -1,4 +1,4 @@
-
+//este objeto faz uma animação de tv ligando no inicio do jogo
 if(tocou_ligando==false)
 	{
 		audio_play_sound(sfx_iniciando_jogo,1,false);
