@@ -8,8 +8,8 @@ for (var i = 4; i < 12; i++) {
 }
 
 // Direcionais absolutos (Teclado e Controle)
-if (keyboard_check_pressed(vk_left)  || (pad != -1 && gamepad_button_check_pressed(pad, 1))) direction -= 90;
-if (keyboard_check_pressed(vk_right) || (pad != -1 && gamepad_button_check_pressed(pad, 3))) direction += 90;
+if (keyboard_check_pressed(vk_left)  || (pad != -1 && gamepad_button_check_pressed(pad, 1))) direction += 90;
+if (keyboard_check_pressed(vk_right) || (pad != -1 && gamepad_button_check_pressed(pad, 3))) direction -= 90;
 var up_key    = keyboard_check(vk_up)    || (pad != -1 && gamepad_button_check(pad, 0));
 var down_key  = keyboard_check(vk_down)  || (pad != -1 && gamepad_button_check(pad, 2));
 image_angle = direction;
