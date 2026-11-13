@@ -8,11 +8,11 @@ for (var i = 4; i < 12; i++) {
 }
 
 // Direcionais absolutos (Teclado e Controle)
-var right_key = keyboard_check(vk_right) || (pad != -1 && gamepad_button_check(pad, 3));
-var left_key  = keyboard_check(vk_left)  || (pad != -1 && gamepad_button_check(pad, 1));
+if (keyboard_check_pressed(vk_left)  || (pad != -1 && gamepad_button_check_pressed(pad, 1))) direction -= 90;
+if (keyboard_check_pressed(vk_right) || (pad != -1 && gamepad_button_check_pressed(pad, 3))) direction += 90;
 var up_key    = keyboard_check(vk_up)    || (pad != -1 && gamepad_button_check(pad, 0));
 var down_key  = keyboard_check(vk_down)  || (pad != -1 && gamepad_button_check(pad, 2));
-
+image_angle = direction;
 var sonar_key = keyboard_check_pressed(vk_space) || (pad != -1 && gamepad_button_check_pressed(pad, 4));
 
 if (global.intro_pronta)
@@ -20,11 +20,9 @@ if (global.intro_pronta)
     if (!global.lendo)
     {
         // Cálculo do movimento direcional (Eixos X e Y)
-        var hmov = right_key - left_key;
-        var vmov = down_key - up_key;
-
-        xspd = hmov * spd;
-        yspd = vmov * spd;
+		 mov = up_key - down_key;
+		xspd = round(lengthdir_x(mov * spd, direction));
+		yspd = round(lengthdir_y(mov * spd, direction));	
 
         // Movimento Horizontal + Colisão
         x += xspd;

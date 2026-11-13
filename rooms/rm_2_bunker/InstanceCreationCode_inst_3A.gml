@@ -5,7 +5,7 @@ if (global.valid_air == "usado")
 }
 else
 {
-targetROOM_x = 50; 
-targetROOM_y = 830;
+targetROOM_x = 64; 
+targetROOM_y = 96;
 target_ROOM = rm_3_air; // selecao de sala
 }

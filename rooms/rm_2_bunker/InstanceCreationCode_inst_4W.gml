@@ -5,7 +5,7 @@ if (global.valid_water == "usado")
 }
 else
 {
-targetROOM_x = 1030; 
-targetROOM_y = 10;
+targetROOM_x = 672; 
+targetROOM_y = 94;
 target_ROOM = rm_4_agua; // selecao de sala
 }
