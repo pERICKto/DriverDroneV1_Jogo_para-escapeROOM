@@ -6,7 +6,7 @@
   "name":"scr_knobs",
   "parent":{
     "name":"obj",
-    "path":"folders/minimage/obj.yy",
+    "path":"folders/minimages/obj.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

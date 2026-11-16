@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"obj",
-    "path":"folders/minimage/obj.yy",
+    "path":"folders/minimages/obj.yy",
   },
   "parentObjectId":null,
   "persistent":false,

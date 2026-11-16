@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"minimage",
-    "path":"folders/minimage.yy",
+    "name":"minimages",
+    "path":"folders/minimages.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

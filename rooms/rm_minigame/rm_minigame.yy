@@ -17,8 +17,8 @@
   ],
   "name":"rm_minigame",
   "parent":{
-    "name":"minimage",
-    "path":"folders/minimage.yy",
+    "name":"minimages",
+    "path":"folders/minimages.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
