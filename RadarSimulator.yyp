@@ -67,9 +67,8 @@
     {"id":{"name":"obj_HUD_inferior","path":"objects/obj_HUD_inferior/obj_HUD_inferior.yy",},},
     {"id":{"name":"obj_intro_crt","path":"objects/obj_intro_crt/obj_intro_crt.yy",},},
     {"id":{"name":"Obj_intro_da_intro","path":"objects/Obj_intro_da_intro/Obj_intro_da_intro.yy",},},
-    {"id":{"name":"obj_LED","path":"objects/obj_LED/obj_LED.yy",},},
     {"id":{"name":"obj_liberar_rfid","path":"objects/obj_liberar_rfid/obj_liberar_rfid.yy",},},
-    {"id":{"name":"obj_minigame_binario","path":"objects/obj_minigame_binario/obj_minigame_binario.yy",},},
+    {"id":{"name":"obj_minigame_BINARIO","path":"objects/obj_minigame_BINARIO/obj_minigame_BINARIO.yy",},},
     {"id":{"name":"obj_minigame","path":"objects/obj_minigame/obj_minigame.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_ponto","path":"objects/obj_ponto/obj_ponto.yy",},},
@@ -351,6 +350,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"rm_binario","path":"rooms/rm_binario/rm_binario.yy",},},
     {"roomId":{"name":"rm_intro","path":"rooms/rm_intro/rm_intro.yy",},},
     {"roomId":{"name":"rm_2_bunker","path":"rooms/rm_2_bunker/rm_2_bunker.yy",},},
     {"roomId":{"name":"rm_1_terra","path":"rooms/rm_1_terra/rm_1_terra.yy",},},
@@ -358,7 +358,6 @@
     {"roomId":{"name":"rm_4_agua","path":"rooms/rm_4_agua/rm_4_agua.yy",},},
     {"roomId":{"name":"rm_victory","path":"rooms/rm_victory/rm_victory.yy",},},
     {"roomId":{"name":"rm_minigame","path":"rooms/rm_minigame/rm_minigame.yy",},},
-    {"roomId":{"name":"rm_binario","path":"rooms/rm_binario/rm_binario.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
