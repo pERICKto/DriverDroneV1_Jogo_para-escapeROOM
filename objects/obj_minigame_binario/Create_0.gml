@@ -37,15 +37,15 @@ if (variable_global_exists("terra") && is_real(global.terra)) {
 gabaritos = [
     // Ponto 1 (global.terra == 1) -> Ex: CA MG (01000011 01000001 01001101 01000111)
     [
-        "01000011 01000001 01001101 01000111", // Opção 0 (Correta)
-        "01001110 01000001 01001111 00100000", // Opção 1 (Errada)
-        "01001011 00100000 01001000 00100000"  // Opção 2 (Errada)
+        "01000011 01100001 01001101 01100111", // Opção 0 CORRETA --(CaMg), 60%, 15% respectivamente, >AMOSTRA SOLO FÉRTIL<
+        "01101011 01101011 01101011 01101011 ", // Opção 1 (Errada) --(KKKK) potassio, potassio, potassio e potassio >muito engraçadinho<
+        "01001111  01010011 01001001 00000001", // Opção 0 (O,Si) -- Oxigenio, Silício. >Vidro vidro? é serio? onde voce conseguiu arrumar isso?!<
     ],
     // Ponto 2 (global.terra == 2) -> Preencha com os binários das 3 amostras deste ponto
     [
-        "00000000 00000000 00000000 00000001", // Opção 0
-        "00000000 00000000 00000000 00000010", // Opção 1
-        "00000000 00000000 00000000 00000011"  // Opção 2
+        "01001111  01010011 01001001 00000001", // Opção 0 (O,Si) -- Oxigenio, Silício. >Vidro cridro, é serio? onde voce xonseguiu arrumar isso?!
+        "01000011  01001111  01001000  01001110 ", // Opção 1 (COIN) -- Carbono, Oxigenio, Hidrogenio, Nitrogenio >Casca de árvore<
+        "01001111 01001000 01000011 01100001"  // Opção 2 (OHCa) -- Oxigenio, Hidrogenio Carbono >Carcaça animal<
     ],
     // Ponto 3 (global.terra == 3) -> Preencha com os binários das 3 amostras deste ponto
     [

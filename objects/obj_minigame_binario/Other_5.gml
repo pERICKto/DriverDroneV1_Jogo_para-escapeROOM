@@ -1,4 +1,4 @@
-if (room == rm_minigame)
+if (room == rm_binario)
 {
     instance_activate_object(obj_player);
     instance_activate_object(obj_HUD_inferior);
