@@ -95,7 +95,7 @@ else
         {
             if (global.air == 1)
             {
-                _string = "[c_green]#00110110 01000010 00110010 01000011 00111001 00110001 00100000[delay]\n\n[c_yellow][blink]sonar = coletar \n\noutro = largar "; //coraçao roxo
+                _string = "[c_green]#6B2C91  [delay]\n\n[c_yellow][blink]sonar = coletar \n\noutro = largar "; //coraçao roxo
             }
             else if (global.air == 2)
             {

@@ -1,3 +1,6 @@
-spd = 4.5;
+spd = 4;
 bunker = false;
 global.distancia_percorrida = 0;
+global.bateria_atual = 0;
+criou_sonar_respirante =false;
+direction = 0; // sprite começa virado para a direita

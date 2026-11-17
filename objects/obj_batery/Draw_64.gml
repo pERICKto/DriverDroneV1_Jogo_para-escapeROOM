@@ -24,4 +24,4 @@ if (batery_estado = 5) {
 }
 
 
-draw_text(400,64,global.bateria_atual )
+//draw_text(400,64,global.bateria_atual )

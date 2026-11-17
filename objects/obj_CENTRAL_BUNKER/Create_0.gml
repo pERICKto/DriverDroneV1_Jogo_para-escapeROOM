@@ -1,4 +1,4 @@
-recarga = 2500;		//bateria = recarga, para nao spawnar com bateira 0!!
+recarga = 2300;		//bateria = recarga, para nao spawnar com bateira 0!!
 portinha = false;
 
 //flags de audio!

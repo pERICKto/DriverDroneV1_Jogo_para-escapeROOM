@@ -18,3 +18,5 @@ distancia_moving = 0;
 
 lista_fade = ds_list_create();
 
+// Desativa a ação de fechar a janela (desativa o 'X' e o Alt+F4)
+window_command_set_active(window_command_close, false);
