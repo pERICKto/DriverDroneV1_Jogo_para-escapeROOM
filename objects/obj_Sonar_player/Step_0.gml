@@ -17,7 +17,7 @@ for (var i = 0; i < n_paredes; i++) {
 
 // PONTOS
 for (var i = 0; i < n_pontos; i++) {
-    // Agora só exige que o raio chegue no ponto, ignorando as paredes
+
     if (dist_pontos[i] <= radius) {
         var _inst = lista_pontos[| i];
 
