@@ -336,6 +336,7 @@
     {"id":{"name":"spr_batery_1","path":"sprites/spr_batery_1/spr_batery_1.yy",},},
     {"id":{"name":"spr_bunkerpixel","path":"sprites/spr_bunkerpixel/spr_bunkerpixel.yy",},},
     {"id":{"name":"spr_chao","path":"sprites/spr_chao/spr_chao.yy",},},
+    {"id":{"name":"spr_HUD_minigame_BINARIO","path":"sprites/spr_HUD_minigame_BINARIO/spr_HUD_minigame_BINARIO.yy",},},
     {"id":{"name":"spr_hud_minimage","path":"sprites/spr_hud_minimage/spr_hud_minimage.yy",},},
     {"id":{"name":"spr_HUD_placeholder_duh","path":"sprites/spr_HUD_placeholder_duh/spr_HUD_placeholder_duh.yy",},},
     {"id":{"name":"spr_knob","path":"sprites/spr_knob/spr_knob.yy",},},
@@ -350,8 +351,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_binario","path":"rooms/rm_binario/rm_binario.yy",},},
     {"roomId":{"name":"rm_intro","path":"rooms/rm_intro/rm_intro.yy",},},
+    {"roomId":{"name":"rm_binario","path":"rooms/rm_binario/rm_binario.yy",},},
     {"roomId":{"name":"rm_2_bunker","path":"rooms/rm_2_bunker/rm_2_bunker.yy",},},
     {"roomId":{"name":"rm_1_terra","path":"rooms/rm_1_terra/rm_1_terra.yy",},},
     {"roomId":{"name":"rm_3_air","path":"rooms/rm_3_air/rm_3_air.yy",},},
