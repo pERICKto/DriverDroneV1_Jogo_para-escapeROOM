@@ -27,16 +27,13 @@ function scr_gerar_relatorio_radar() {
         var _coordenada = _linha + string(_coluna); // Ex: B2, A4, etc.
         
         // 3. Buscar o texto binário com base na sala e no índice da amostra (global.terra, global.air, global.water)
-        var _binario_texto = " ";
+        var _binario_texto = "DESCONHECIDO";
         
         switch (room) {
             case rm_1_terra:
-                if (_contador_amostra == 1)      _binario_texto = "01000011 01000001 : 00110110 00110000 %";
-                else if (_contador_amostra == 2) _binario_texto = "01001110 01000001 : 00110001 00110000 %";
-                else if (_contador_amostra == 3) _binario_texto = "01000011 01000001 : 00110000 00110101 %";
-                else if (_contador_amostra == 4) _binario_texto = "01000001 01001100 : 00110000 00111000 %";
-                else if (_contador_amostra == 5) _binario_texto = "01001111 : 00110100 00111000 %";
-                else if (_contador_amostra == 6) _binario_texto = "smelly organic material... better leave it alone";
+                if (_contador_amostra == 1)      _binario_texto = "placeholder, colcocar aqui eletmentos disponovel no banco de amostras";
+                else if (_contador_amostra == 2) _binario_texto = "placeholder, colcocar aqui eletmentos disponovel no banco de amostras";
+                else if (_contador_amostra == 3) _binario_texto = "placeholder, colcocar aqui eletmentos disponovel no banco de amostras";
                 break;
                 
             case rm_3_air:
@@ -55,7 +52,7 @@ function scr_gerar_relatorio_radar() {
                 else if (_contador_amostra == 4) _binario_texto = "00110010 * 00110001 00110000 / 00110010";
                 else if (_contador_amostra == 5) _binario_texto = "00110010 * 00110001 00110000 / 00110010";
                 else if (_contador_amostra == 6) _binario_texto = "just some debris";
-                else if (_contador_amostra == 7) _binario_texto = " ";
+                else if (_contador_amostra == 7) _binario_texto = "a bunch of rock and metal";
                 break;
         }
         
