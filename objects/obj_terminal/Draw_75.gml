@@ -8,8 +8,8 @@ else if (analise)
     var _string;
     if (global.terra == global.valid_terra)
     {
-        _string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAnalise completa... [delay]\nAmostra correta!";
-    }
+		_string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAmostra aparenta ser... [delay]\nMinha nossa, isso é solo fértil?  [delay]\n[c_yellow]NÓS CONSEGUIMOS!\!...\n [delay,1500] "
+	   }
 	else if (global.air == global.valid_air)
 	{
 		 _string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAnalise completa... [delay]\nAmostra correta!";
@@ -21,23 +21,23 @@ else if (analise)
     else if (global.terra != "")
     {
 		global.erro = true; //pra mudar o sprite da hud
-       if (global.terra == 2)
+	    if (global.terra == 2) //piadinha com potassio (KKKK) //atualizado com minigame novo, mudar cores depois
 	   {
-		_string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAnalise completa... [delay]\nAmostra aparenta ser ...  [delay]\n[c_yellow]vidro\ncolete solo!...\n [delay,1500] "
-	   }
-	   else if (global.terra == 3)
+	   _string = "[scale,0.7][c_green]Analisando amostra...[delay] \... ... ... [delay][c_yellow]\npotassio, potassio, potassio  [delay]\né serio isso? \n muito engraçadinho!\ncolete solo!...\n [delay,1500] "
+	   }	   
+	   else if (global.terra == 3)// vidro, preciso testar e preciso mudar cores
 	   {
-	   _string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAnalise completa... [delay]\nAmostra aparenta ser ...  [delay]\n[c_yellow]restos de madeira\ncolete solo!...\n [delay,1500] "
+	   _string = "[scale,0.7][c_green]Analisando amostra...[delay] \nIsso é vidro? completa... [delay]\nonde voce conseguiu encontrar[delay]\n[c_yellow]isso?\ncolete solo!...\n [delay,1500] "
 	   }
-	   else if (global.terra == 4)
+	   else if (global.terra == 4)//atualizado com minigame novo, precisa de testes, preciso mudar cores
 	   {
-	   _string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAnalise completa... [delay]\nAmostra aparenta ser ...  [delay]\n[c_yellow]granito\ncolete solo!...\n [delay,1500] "
+	   _string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAnalise completa... [delay]\nAmostra aparenta ser ...  [delay]\n[c_yellow]TAMPINHAS DE CARRAFA???\n Nós não usamos isso a décadas!\n colete solo! [delay,1500] "
 	   }
-	   else if (global.terra == 5)
+	   else if (global.terra == 5)// ver cores
 	   {
-		_string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAnalise completa... [delay]\nAmostra aparenta ser ...  [delay]\n[c_yellow]calcario\ncolete solo!...\n [delay,1500] "
+		_string = "[scale,0.7][c_green]Analisando amostra...[delay] \nAnalise completa... [delay]\nAmostra aparenta ser ...  [delay]\n[c_yellow]restos de pinheiro\nnão parece ser util...\n [delay,1500] "
 	   }
-	   else if (global.terra == 6)
+	   else if (global.terra == 6) //atualizado, vou mudar nn, isso ficou mt bom kkkk
 	   {
 	   _string = "[scale,0.7][c_green]porque voce trouxe isso???\nagora o laboratorio fede\nmelhor trocar o piloto!\n [delay,1500] "
 	   }

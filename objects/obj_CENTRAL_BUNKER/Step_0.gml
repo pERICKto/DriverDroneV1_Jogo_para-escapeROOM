@@ -1,14 +1,22 @@
+if (!variable_instance_exists(id, "aguardando_leitura_erro")) {
+    aguardando_leitura_erro = false;
+    texto_erro_iniciado = false;
+}
+
 if (!place_meeting(x,y,obj_player))
 {
-	portinha = false;
+    portinha = false;
+    aguardando_leitura_erro = false;
+    texto_erro_iniciado = false;
 }
+
 if place_meeting(x, y, obj_player)
 {
-	if (!portinha)
-	{
-		audio_play_sound(keypad_open_panel_01,1,false,1);
-		portinha = true;
-	}
+    if (!portinha)
+    {
+        audio_play_sound(keypad_open_panel_01,1,false,1);
+        portinha = true;
+    }
     // sistema de regarga de pilha do bunker!!
     if (global.bateria_atual <= 4000) {
         recarga += 10;
@@ -27,7 +35,7 @@ if place_meeting(x, y, obj_player)
             }
             else if (estado_amostra == 1) 
             {
-                if (!audio_is_playing(sfx_amostra_bunker)) 
+                if (!audio_is_playing(sfx_amostra_bunker) && !global.lendo) // espera o texto terminal acaabar
                 {
                     audio_play_sound(sfx_spawBUNKER_ou_desceramostra, 3, false);
                     scan = true;
@@ -42,8 +50,25 @@ if place_meeting(x, y, obj_player)
     }
     else if (global.terra != global.valid_terra && global.terra != "")
     {
-		global.terra = "";
-        if (!audio_is_playing(sfx_Alarm5)) { audio_play_sound(sfx_Alarm5, 1, false); }
+        if (!aguardando_leitura_erro)
+        {
+            if (!audio_is_playing(sfx_Alarm5)) { audio_play_sound(sfx_Alarm5, 1, false); }
+            aguardando_leitura_erro = true;
+            texto_erro_iniciado = false;
+        }
+        else
+        {
+            // Espera o obj_terminal começar a digitar o erro (global.lendo == true)
+            if (global.lendo) {
+                texto_erro_iniciado = true;
+            }
+            // Só limpa global.terra DEPOIS que o terminal começou E terminou de digitar tudo
+            else if (texto_erro_iniciado && !global.lendo) {
+                global.terra = "";
+                aguardando_leitura_erro = false;
+                texto_erro_iniciado = false;
+            }
+        }
     }
 
     // --- AR (independente) ---
@@ -74,8 +99,23 @@ if place_meeting(x, y, obj_player)
     }
     else if (global.air != global.valid_air && global.air != "")
     {
-		global.air = "";
-        if (!audio_is_playing(sfx_Alarm5)) { audio_play_sound(sfx_Alarm5, 1, false); }
+        if (!aguardando_leitura_erro)
+        {
+            if (!audio_is_playing(sfx_Alarm5)) { audio_play_sound(sfx_Alarm5, 1, false); }
+            aguardando_leitura_erro = true;
+            texto_erro_iniciado = false;
+        }
+        else
+        {
+            if (global.lendo) {
+                texto_erro_iniciado = true;
+            }
+            else if (texto_erro_iniciado && !global.lendo) {
+                global.air = "";
+                aguardando_leitura_erro = false;
+                texto_erro_iniciado = false;
+            }
+        }
     }
 
     // --- ÁGUA (independente) ---
@@ -106,15 +146,29 @@ if place_meeting(x, y, obj_player)
     }
     else if (global.water != global.valid_water && global.water != "")
     {
-		global.water = "";
-        if (!audio_is_playing(sfx_Alarm5)) { audio_play_sound(sfx_Alarm5, 1, false); }
+        if (!aguardando_leitura_erro)
+        {
+            if (!audio_is_playing(sfx_Alarm5)) { audio_play_sound(sfx_Alarm5, 1, false); }
+            aguardando_leitura_erro = true;
+            texto_erro_iniciado = false;
+        }
+        else
+        {
+            if (global.lendo) {
+                texto_erro_iniciado = true;
+            }
+            else if (texto_erro_iniciado && !global.lendo) {
+                global.water = "";
+                aguardando_leitura_erro = false;
+                texto_erro_iniciado = false;
+            }
+        }
     }
 }
 
 if (global.valid >= 3 && !global.sequencia_final && place_meeting(x, y, obj_player) && !global.lendo)
 {
     global.sequencia_final = true;
-	
 }
 
 if (global.sequencia_final && !jogo_finalizado && typist_texto_final.get_state() == 1.0)
@@ -124,7 +178,7 @@ if (global.sequencia_final && !jogo_finalizado && typist_texto_final.get_state()
     audio_stop_all();
     audio_play_sound(distorted_console_login_jingle, 5, false);
 
-	instance_deactivate_all();
+    instance_deactivate_all();
     instance_create_layer(0, 0, "Instances", Obj_victory);
 
     var _pasta = environment_get_variable("USERPROFILE") + "\\Downloads\\";

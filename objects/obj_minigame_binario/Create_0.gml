@@ -1,4 +1,4 @@
-/// @description Inicialização do terminal binário vinculado a rm_1_terra
+/// @description Inicialização do terminal binário (2 Pontos, 6 IDs únicos de saída para global.terra)
 
 // --- ESTADOS DE FLUXO ---
 intro = true;
@@ -6,11 +6,11 @@ espera = false;
 destino = rm_1_terra;
 
 // --- TEXTOS DO SCRIBBLE ---
-texto_intro = scribble("[c_green]INICIALIZANDO TERMINAL DE AMOSTRAS...\nINSIRA A SEQUENCIA BINARIA DOS ELEMENTOS.[delay5000]");
+texto_intro = scribble("[c_green]INICIALIZANDO TERMINAL DE AMOSTRAS...\nINSIRA A SEQUENCIA BINARIA DOS ELEMENTOS.[delay,5000]");
 typist_intro = scribble_typist();
 typist_intro.in(0.5, 0);
 
-texto_final_t = scribble("[c_green]VALIDANDO COMPOSICAO QUIMICA[delay30].[delay30].[delay50].[delay]");
+texto_final_t = scribble("[c_green]VALIDANDO COMPOSICAO QUIMICA[delay,30].[delay,30].[delay,50].[delay]");
 typist_final_t = scribble_typist();
 typist_final_t.in(0.5, 0);
 
@@ -22,38 +22,36 @@ typist_binario = scribble_typist();
 leds = array_create(32, 0);
 cursor = 0;
 stick_pode_mover = true;
-amostra_liberada = -1; // Qual das 3 opções internas (0, 1 ou 2) o jogador destravou
-amostra_eh_valida = false;
+sequencia_capturada = "";
+id_amostra_gerada = 1; // Guarda o valor único que será enviado para global.terra ao coletar
 
-// Proteção caso global.terra venha vazio ("") ou no teste direto da sala
+// Proteção caso global.terra venha vazio ("") ou no teste direto da sala (IDs 1 e 2)
 if (variable_global_exists("terra") && is_real(global.terra)) {
-    ponto_atual = clamp(global.terra - 1, 0, 2);
+    ponto_atual = clamp(global.terra - 1, 0, 1);
 } else {
     global.terra = 1;
     ponto_atual = 0;
 }
 
-// --- GABARITOS (3 pontos em rm_1_terra, cada um com 3 opções de 32 bits) ---
+// --- GABARITOS (2 pontos em rm_1_terra, cada um com 3 opções de 32 bits limpas) ---
 gabaritos = [
-    // Ponto 1 (global.terra == 1) -> Ex: CA MG (01000011 01000001 01001101 01000111)
+    // Ponto 1 (item_id == 1)
     [
-        "01000011 01100001 01001101 01100111", // Opção 0 CORRETA --(CaMg), 60%, 15% respectivamente, >AMOSTRA SOLO FÉRTIL<
-        "01101011 01101011 01101011 01101011 ", // Opção 1 (Errada) --(KKKK) potassio, potassio, potassio e potassio >muito engraçadinho<
-        "01001111  01010011 01001001 00000001", // Opção 0 (O,Si) -- Oxigenio, Silício. >Vidro vidro? é serio? onde voce conseguiu arrumar isso?!<
+        "01000011 01100001 01001101 01100111", // Opção 0 -> CaMg (Solo Fértil - CORRETA)
+        "01101011 01101011 01101011 01101011", // Opção 1 -> kkkk (Potássio)
+        "01001111 01010011 01001001 00000001"  // Opção 2 -> OSI  (Vidro) 
     ],
-    // Ponto 2 (global.terra == 2) -> Preencha com os binários das 3 amostras deste ponto
+    // Ponto 2 (item_id == 2)
     [
-        "01001111  01010011 01001001 00000001", // Opção 0 (O,Si) -- Oxigenio, Silício. >Vidro cridro, é serio? onde voce xonseguiu arrumar isso?!
-        "01000011  01001111  01001000  01001110 ", // Opção 1 (COIN) -- Carbono, Oxigenio, Hidrogenio, Nitrogenio >Casca de árvore<
-        "01001111 01001000 01000011 01100001"  // Opção 2 (OHCa) -- Oxigenio, Hidrogenio Carbono >Carcaça animal<
-    ],
-    // Ponto 3 (global.terra == 3) -> Preencha com os binários das 3 amostras deste ponto
-    [
-        "11111111 00000000 00000000 00000000", // Opção 0
-        "00000000 11111111 00000000 00000000", // Opção 1
-        "00000000 00000000 11111111 00000000"  // Opção 2
+        "01000110 01100101 01010011 01101110", // Opção 0 -> FeSN  (ferro e estanho(tampinha de carrafa(referencia fallout)))
+        "01000011 01001111 01001000 01001110", // Opção 1 -> COHN (Casca de árvore)
+        "01001111 01001000 01000011 01100001"  // Opção 2 -> OHCa (Carcaça animal)
     ]
 ];
 
-// Qual das 3 opções internas (0, 1 ou 2) é a verdadeira de cada ponto
-resposta_correta_por_ponto = [0, 1, 2];
+// --- MAPA DE IDS ÚNICOS PARA O BUNKER (global.terra) ---
+// Cada opção de cada ponto recebe um número único de 1 a 6 para o obj_terminal ler no bunker
+ids_saida_terra = [
+    [1, 2, 3], // Ponto 1: Opção 0 -> 1 (Válida) | Opção 1 -> 2 | Opção 2 -> 3
+    [4, 5, 6]  // Ponto 2: Opção 0 -> 4          | Opção 1 -> 5 | Opção 2 -> 6
+];

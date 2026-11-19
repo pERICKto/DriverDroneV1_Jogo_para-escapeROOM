@@ -1,9 +1,11 @@
-recarga = 2500;		//bateria = recarga, para nao spawnar com bateira 0!!
+recarga = 2500;        //bateria = recarga, para nao spawnar com bateira 0!!
 portinha = false;
 
 //flags de audio!
-estado_amostra = 0
+estado_amostra = 0;
 scan = false;
+aguardando_leitura_erro = false;
+texto_erro_iniciado = false;
 
 //sequencia pra acabar o jogo
 jogo_finalizado = false;

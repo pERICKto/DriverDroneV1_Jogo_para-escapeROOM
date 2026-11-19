@@ -1,4 +1,4 @@
-/// @description Step completo integrado com global.terra e obj_bunker
+/// @description Step completo com atribuição individual de global.terra por amostra
 
 var pad = -1;
 for (var i = 4; i < 12; i++) {
@@ -8,24 +8,24 @@ for (var i = 4; i < 12; i++) {
     }
 }
 
-// 1. FASE DE INTRO
+//INTRO
 if (intro) {
     if (typist_intro.get_state() == 1.0) {
         intro = false;
     }
 }
 else {
-    // 2. FASE ATIVA DOS LEDS
+    //FASE ATIVA DOS LEDS
     if (!espera) {
         
-        // Botão do Sonar (Espaço / Botão 4) = Abortar e voltar para rm_1_terra
+        // Botão do Sonar (Espaço / Botão 4) = Abortar e voltar para rm_1_terra sem amostra
         if (keyboard_check_pressed(vk_space) || (pad != -1 && gamepad_button_check_pressed(pad, 4))) {
             global.terra = "";
             room_goto(destino);
             exit;
         }
 
-        // Navegação (Teclado + Botões 0, 1, 2, 3 + Analógico)
+        // Navegação (Teclado + Botões 0, 1, 2, 3 + POTENCIOMETRO)
         var dir_direita  = keyboard_check_pressed(vk_right) || (pad != -1 && gamepad_button_check_pressed(pad, 2));
         var dir_esquerda = keyboard_check_pressed(vk_left)  || (pad != -1 && gamepad_button_check_pressed(pad, 0));
         var dir_baixo    = keyboard_check_pressed(vk_down)  || (pad != -1 && gamepad_button_check_pressed(pad, 1));
@@ -70,30 +70,25 @@ else {
                 if ((i + 1) mod 8 == 0 && i < 31) _sequencia_atual += " ";
             }
             
-            // Verifica se a sequência bate com alguma das 3 opções do ponto atual
+            // Verifica automaticamente contra as 3 opções do ponto atual
             var _opcoes_do_ponto = gabaritos[ponto_atual];
-            var _indice_correto  = resposta_correta_por_ponto[ponto_atual];
             
             for (var j = 0; j < 3; j++) {
                 if (_sequencia_atual == _opcoes_do_ponto[j]) {
-                    amostra_liberada = j;
-                    amostra_eh_valida = (j == _indice_correto);
-                    espera = true; // Avança para a tela de resultado
+                    sequencia_capturada = _sequencia_atual;
+                    id_amostra_gerada   = ids_saida_terra[ponto_atual][j];
+                    espera = true; // Avança para a tela neutra de coleta
                     break;
                 }
             }
         }
     }
-    // 3. FASE DE RESULTADO (espera == true)
+    //RESULTADO / COLETA (espera == true)
     else {
         // CONFIRMAR / COLETAR (Botão do Sonar: Espaço ou Botão 4)
         if (keyboard_check_pressed(vk_space) || (pad != -1 && gamepad_button_check_pressed(pad, 4))) {
-            // Se o jogador destravou uma das 2 opções erradas do painel, marca global.terra com valor inválido (99)
-            // Assim, quando ele entregar no obj_bunker, o bunker vai rejeitar e tocar o alarme!
-            if (!amostra_eh_valida) {
-                global.terra = 99;
-            }
-            
+            // Grava o ID único (1 a 6) da amostra escolhida para o obj_terminal ler no bunker
+            global.terra = id_amostra_gerada;
             global.skip = true;
             room_goto(destino);
         }
